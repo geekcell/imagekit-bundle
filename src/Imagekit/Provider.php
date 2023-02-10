@@ -7,7 +7,7 @@ namespace GeekCell\ImagekitBundle\Imagekit;
 use GeekCell\ImagekitBundle\Contracts\Asset;
 use GeekCell\ImagekitBundle\Imagekit\Asset as ImagekitAsset;
 use GeekCell\ImagekitBundle\Support\Traits\ConfigurableTrait;
-use ImageKit\ImageKit;
+use ImageKit\ImageKit as ImagekitSDK;
 
 class Provider
 {
@@ -16,9 +16,9 @@ class Provider
     /**
      * Provider constructor.
      *
-     * @param ImageKit $imageKit
+     * @param ImagekitSDK $imageKit
      */
-    public function __construct(private readonly Imagekit $imageKit)
+    public function __construct(private readonly ImagekitSDK $imageKit)
     {
     }
 
@@ -33,7 +33,7 @@ class Provider
      */
     public static function create(string $publicKey, string $privateKey, string $urlEndpoint): self
     {
-        $imageKit = new ImageKit($publicKey, $privateKey, $urlEndpoint);
+        $imageKit = new ImagekitSDK($publicKey, $privateKey, $urlEndpoint);
         return (new self($imageKit))->configure();
     }
 
