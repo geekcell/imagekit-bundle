@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace GeekCell\ImagekitBundle\Imagekit;
 
 use GeekCell\ImagekitBundle\Contracts\Asset;
+use GeekCell\ImagekitBundle\Contracts\Provider as ProviderInterface;
 use GeekCell\ImagekitBundle\Imagekit\Asset as ImagekitAsset;
 use GeekCell\ImagekitBundle\Support\Traits\ConfigurableTrait;
 use ImageKit\ImageKit as ImagekitSDK;
 
-class Provider
+class Provider implements ProviderInterface
 {
     use ConfigurableTrait;
 
@@ -38,15 +39,12 @@ class Provider
     }
 
     /**
-     * Provide an asset from a path or a source url
-     *
-     * @param string $pathOrUrl  A path or source url
-     * @return Asset
+     * {@inheritDoc}
      */
     public function provide(string $pathOrUrl): Asset
     {
         // Check whether $pathOrUrl is a path or a url
-        if (filter_var($pathOrUrl, FILTER_VALIDATE_URL)) {
+        if (filter_var($pathOrUrl, \FILTER_VALIDATE_URL)) {
             return $this->assetFromSourceUrl($pathOrUrl);
         }
 

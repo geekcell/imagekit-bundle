@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace GeekCell\ImagekitBundle\Imagekit;
 
+use GeekCell\ImagekitBundle\Contracts\Provider;
+
 class ProviderRegistry
 {
     /**
