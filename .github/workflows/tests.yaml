@@ -34,7 +34,10 @@ jobs:
                 path: vendor
                 key: ${{ runner.os }}-vendor-${{ hashFiles('**/composer.lock') }}
             - name: Install dependencies
-              run: composer install --prefer-dist --no-scripts --ignore-platform-reqs
+              run: |
+                composer install --prefer-dist --no-scripts --ignore-platform-reqs
+                cat vendor/composer/autoload_psr4.php
+                ls vendor/imagekit/imagekit/src/ImageKit
 
             # Run tests
             - name: Run Unit Tests
