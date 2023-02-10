@@ -35,7 +35,8 @@
     "autoload": {
         "psr-4": {
             "GeekCell\\ImagekitBundle\\": "src/",
-            "GeekCell\\ImagekitBundle\\Tests\\": "tests/"
+            "GeekCell\\ImagekitBundle\\Tests\\": "tests/",
+            "ImageKit\\": "vendor/imagekit/imagekit/src/ImageKit"
         }
     },
     "scripts": {
