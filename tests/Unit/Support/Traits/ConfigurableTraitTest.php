@@ -30,8 +30,9 @@ class ConfigurableTraitTest extends TestCase
         $this->path('path');
 
         // Then
+        $this->assertIsArray($this->config);
         $this->assertArrayHasKey('path', $this->config);
-        $this->assertEquals('path', $this->config['path']);
+        $this->assertEquals('path', $this->config['path'] ?? '');
     }
 
     public function testSourceUrl(): void
@@ -43,8 +44,9 @@ class ConfigurableTraitTest extends TestCase
         $this->sourceUrl('sourceUrl');
 
         // Then
+        $this->assertIsArray($this->config);
         $this->assertArrayHasKey('src', $this->config);
-        $this->assertEquals('sourceUrl', $this->config['src']);
+        $this->assertEquals('sourceUrl', $this->config['src'] ?? '');
     }
 
     public function testTransform(): void
@@ -56,11 +58,14 @@ class ConfigurableTraitTest extends TestCase
         $this->transform('key', 'value');
 
         // Then
+        $this->assertIsArray($this->config);
         $this->assertArrayHasKey('transformation', $this->config);
-        $this->assertIsArray($this->config['transformation']);
-        $this->assertNotEmpty($this->config['transformation']);
-        $this->assertArrayHasKey('key', $this->config['transformation'][0]);
-        $this->assertEquals('value', $this->config['transformation'][0]['key']);
+        $this->assertIsArray($this->config['transformation'] ?? null);
+
+        $transformations = $this->config['transformation'];
+        $this->assertNotEmpty($transformations);
+        $this->assertArrayHasKey('key', $transformations[0]);
+        $this->assertEquals('value', $transformations[0]['key']);
     }
 
     public function testSigned(): void
@@ -72,8 +77,9 @@ class ConfigurableTraitTest extends TestCase
         $this->signed();
 
         // Then
+        $this->assertIsArray($this->config);
         $this->assertArrayHasKey('signed', $this->config);
-        $this->assertTrue($this->config['signed']);
+        $this->assertTrue($this->config['signed'] ?? false);
     }
 
     public function testExpires(): void
@@ -85,8 +91,9 @@ class ConfigurableTraitTest extends TestCase
         $this->expires(123);
 
         // Then
+        $this->assertIsArray($this->config);
         $this->assertArrayHasKey('expireSeconds', $this->config);
-        $this->assertEquals(123, $this->config['expireSeconds']);
+        $this->assertEquals(123, $this->config['expireSeconds'] ?? 0);
     }
 
     public function testExpiresWithInvalidValue(): void
@@ -98,6 +105,7 @@ class ConfigurableTraitTest extends TestCase
         $this->expires(-1);
 
         // Then
+        $this->assertIsArray($this->config);
         $this->assertArrayNotHasKey('expireSeconds', $this->config);
     }
 

@@ -103,6 +103,6 @@ trait ConfigurableTrait
             $this->configure();
         }
 
-        return $this->config;
+        return $this->config ?? [];
     }
 }
