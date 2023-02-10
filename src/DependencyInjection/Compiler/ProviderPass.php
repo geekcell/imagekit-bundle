@@ -23,7 +23,8 @@ class ProviderPass implements CompilerPassInterface
         $providers = $container->findTaggedServiceIds('geek_cell_imagekit.provider');
         foreach ($providers as $providerId => $attributes) {
             $providerDefinition = $container->getDefinition($providerId);
-            if (!is_a($providerDefinition->getClass(), Provider::class, true)) {
+            $class = $providerDefinition->getClass();
+            if (null === $class || !is_a($class, Provider::class, true)) {
                 continue;
             }
 
