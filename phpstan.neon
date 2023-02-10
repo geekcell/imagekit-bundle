@@ -1,0 +1,11 @@
+includes:
+    - vendor/phpstan/phpstan-mockery/extension.neon
+
+parameters:
+    level: 7
+    paths:
+        - src
+        - tests
+    excludePaths:
+        -  src/DependencyInjection/Configuration.php
+        - vendor

@@ -1,2 +1,2 @@
 # imagekit-bundle
-A Symfony bundle for ImageKit integration
+A Symfony bundle for Imagekit integration

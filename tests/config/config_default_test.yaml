@@ -1,0 +1,27 @@
+geek_cell_imagekit:
+    public_key: 'public_key'
+    private_key: 'private_key'
+    base_url: 'http://example.org'
+    configurations:
+        foo:
+            endpoint: '/foo'
+            transformation:
+                named: named_foo
+            signed: false
+        bar:
+            endpoint: '/bar'
+            transformation:
+                width: 100
+                height: 100
+            signed: true
+            expires: 3600
+        baz:
+            endpoint: '/baz'
+            transformation:
+                quality: 40
+                rotation: 90
+                progressive: true
+                effect_contrast: 1
+                format: 'png'
+            signed: true
+            expires: 1800

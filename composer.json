@@ -1,0 +1,47 @@
+{
+    "name": "geekcell/imagekit-bundle",
+    "description": "A Symfony bundle for Imagekit integration",
+    "type": "symfony-bundle",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Kappen",
+            "email": "christian.kappen@geekcell.io",
+            "homepage": "https://geekcell.io"
+        },
+        {
+            "name": "Pascal Cremer",
+            "email": "pascal.cremer@geekcell.io",
+            "homepage": "https://geekcell.io"
+        }
+    ],
+    "require": {
+        "imagekit/imagekit": "^3.0",
+        "symfony/http-kernel": "^6.2",
+        "symfony/dependency-injection": "^6.2",
+        "symfony/config": "^6.2",
+        "symfony/string": "^6.2"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.14",
+        "mockery/mockery": "^1.5",
+        "phpstan/phpstan": "^1.9",
+        "phpstan/phpstan-mockery": "^1.1",
+        "phpunit/phpunit": "^9.5",
+        "symfony/framework-bundle": "^6.2",
+        "symfony/yaml": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "GeekCell\\ImagekitBundle\\": "src/",
+            "GeekCell\\ImagekitBundle\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "gc:tests": "phpunit --testdox --colors=always",
+        "gc:cs-lint": "php-cs-fixer fix --config .php-cs-fixer.php --diff -vvv --dry-run",
+        "gc:cs-fix": "php-cs-fixer fix --config .php-cs-fixer.php -vvv || true",
+        "gc:phpstan": "phpstan analyse --memory-limit=2G --no-progress --level=8"
+    }
+}

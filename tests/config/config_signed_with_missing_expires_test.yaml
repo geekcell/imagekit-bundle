@@ -1,0 +1,10 @@
+geek_cell_imagekit:
+    public_key: 'public_key'
+    private_key: 'private_key'
+    base_url: 'http://example.org'
+    configurations:
+        foo_config:
+            endpoint: '/foo'
+            transformation:
+                named: named_foo
+            signed: true # invalid, because expires is missing
