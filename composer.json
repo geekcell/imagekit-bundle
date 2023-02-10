@@ -2,7 +2,7 @@
     "name": "geekcell/imagekit-bundle",
     "description": "A Symfony bundle for Imagekit integration",
     "type": "symfony-bundle",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "authors": [
         {
