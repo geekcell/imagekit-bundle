@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace GeekCell\ImagekitBundle\Tests\Unit\Imagekit;
 
-use GeekCell\ImagekitBundle\Imagekit\Provider;
+use GeekCell\ImagekitBundle\Contracts\Provider;
 use GeekCell\ImagekitBundle\Imagekit\ProviderRegistry;
 use Mockery;
 use PHPUnit\Framework\TestCase;

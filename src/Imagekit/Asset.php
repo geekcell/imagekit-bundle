@@ -13,11 +13,8 @@ class Asset implements AssetInterface
     }
 
     /**
-     * Get the url of the asset.
-     *
+     * {@inheritdoc}
      * @codeCoverageIgnore
-     *
-     * @return string
      */
     public function getUrl(): string
     {
