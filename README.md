@@ -25,7 +25,7 @@ return [
 
 ## Usage
 
-This bundle uses the concept of "providers" to return an ImageKit asset. The recommended way to interact with providers is to configure them inside `config/packages/geekcell_imagekit.yaml`
+This bundle uses the concept of "providers" to return an ImageKit asset. The recommended way to interact with providers is to configure them inside `config/packages/geek_cell_imagekit.yaml`
 
 ```yaml
 geek_cell_imagekit:
