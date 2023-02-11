@@ -57,7 +57,7 @@ In the example above, we've defined two configurations called `user_avatars` and
 - `signed` - Append a signature to your asset's URL.
 - `expires` - Expiration time in seconds; must be set if `signed` is set to `true`.
 
-If you're using autowiring in your Symfony project, you can then simply typehint `GeekCell\ImagekitBundle\Imagekit\ProviderRegistry` in your services and/or controllers and to inject a registry from which you can retrieve every configured provider by its name.
+If you're using autowiring in your Symfony project, you can then simply typehint `GeekCell\ImagekitBundle\Imagekit\ProviderRegistry` in your services and/or controllers to inject a registry from which you can retrieve every configured provider by its name.
 
 ```php
 #[AsController]
