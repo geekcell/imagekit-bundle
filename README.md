@@ -25,34 +25,39 @@ return [
 
 ## Usage
 
-This bundle uses the concept of providers to return an ImageKit asset. The recommended way to interact with providers is to configure them inside `config/packages/geekcell_imagekit.yaml`
+This bundle uses the concept of "providers" to return an ImageKit asset. The recommended way to interact with providers is to configure them inside `config/packages/geekcell_imagekit.yaml`
 
 ```yaml
 geek_cell_imagekit:
     public_key: '%env(IMAGEKIT_PUBLIC_KEY)%'
     private_key: '%env(IMAGEKIT_PRIVATE_KEY)%'
     base_url: 'https://ik.imagekit.io'
-    
     configurations:
         user_avatars:
             endpoint: '/user/avatars'
             transformation:
                 width: 150
                 height: 150
-                quality: 80
+                quality: 70
             signed: false
         user_profile_images:
             endpoint: '/user/profile_images'
             transformation:
                 width: 800
                 height: 800
+                quality: 80
             signed: true
             expires: 3600
 ```
 
-In the example above, we've defined two configurations named `user_avatars` and `user_profile_images` with different transformations and settings.
+In the example above, we've defined two configurations called `user_avatars` and `user_profile_images`. Currently, the following settings are supported:
 
-If you're using autowiring, you can then simply inject `GeekCell\ImagekitBundle\Imagekit\ProviderRegistry` in your services and/or controllers and retrieve the asset like shown below.
+- `endpoint` - Custom endpoints configured in your ImageKit account.
+- `transformation` - Key-value pairs of transformations to apply.
+- `signed` - Append a signature to your asset's URL.
+- `expires` - Expiration time in seconds; must be set if `signed` is set to `true`.
+
+If you're using autowiring in your Symfony project, you can then simply typehint `GeekCell\ImagekitBundle\Imagekit\ProviderRegistry` in your services and/or controllers and to inject a registry from which you can retrieve every configured provider by its name.
 
 ```php
 #[AsController]
@@ -65,7 +70,7 @@ class AvatarController extends AbstractController
         $this->avatarProvider = $registry->getProvider('user_avatars');
     }
 
-    #[Route('/my-avatar', name: 'my-avatar')]
+    #[Route('/avatar', name: 'avatar')]
     public function avatar()
     {
         $asset = $this->avatarProvider->provide('some-username.png');
@@ -76,4 +81,4 @@ class AvatarController extends AbstractController
     }
 }
 ```
-In a real-world application, of course, you wouldn't hard-code a path like "some-username.png", but instead provide a dynamic path from a datastore that corresponds to the asset source(s) you've configured in your ImageKit account.
+In a real-world application, of course, you would replace the hard-coded `some-username.png` path with a path returned from some datastore that corresponds to the asset source(s) you've configured in your ImageKit account.
