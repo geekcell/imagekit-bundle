@@ -53,7 +53,7 @@ geek_cell_imagekit:
 In the example above, we've defined two configurations called `user_avatars` and `user_profile_images`. Currently, the following settings are supported:
 
 - `endpoint` - Custom endpoints configured in your ImageKit account.
-- `transformation` - Key-value pairs of transformations to apply.
+- `transformation` - Key-value pairs of transformations to apply to the asset. Click [here](https://github.com/imagekit-developer/imagekit-php#list-of-supported-transformations) the full list of supported transformations.
 - `signed` - Append a signature to your asset's URL.
 - `expires` - Expiration time in seconds; must be set if `signed` is set to `true`.
 
