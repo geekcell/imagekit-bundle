@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/geekcell/imagekit-bundle/compare/v1.0.2...v1.0.3) (2023-02-13)
+
+
+### Bug Fixes
+
+* Replace `AbstractBundle` with `Bundle` for older Symfony versions. ([7965c8d](https://github.com/geekcell/imagekit-bundle/commit/7965c8d7e2377bb9c27e4ef7bd5e653cb03e4128))
+
 ## [1.0.2](https://github.com/geekcell/imagekit-bundle/compare/v1.0.1...v1.0.2) (2023-02-13)
 
 
