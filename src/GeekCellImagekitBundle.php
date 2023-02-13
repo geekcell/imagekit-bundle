@@ -8,9 +8,9 @@ use GeekCell\ImagekitBundle\DependencyInjection\Compiler\ProviderPass;
 use GeekCell\ImagekitBundle\DependencyInjection\GeekCellImagekitExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
-use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class GeekCellImagekitBundle extends AbstractBundle
+final class GeekCellImagekitBundle extends Bundle
 {
     /**
      * {@inheritdoc}
