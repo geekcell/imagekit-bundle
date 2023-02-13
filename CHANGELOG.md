@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/geekcell/imagekit-bundle/compare/v1.0.1...v1.0.2) (2023-02-13)
+
+
+### Miscellaneous Chores
+
+* release 1.0.2 ([0cd6653](https://github.com/geekcell/imagekit-bundle/commit/0cd6653c8b742462aaf6018066f3497239dab23d))
+
 ## [1.0.1](https://github.com/geekcell/imagekit-bundle/compare/v1.0.0...v1.0.1) (2023-02-10)
 
 
