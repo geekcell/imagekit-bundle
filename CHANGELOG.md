@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/geekcell/imagekit-bundle/compare/v1.0.3...v1.0.4) (2023-07-21)
+
+
+### Bug Fixes
+
+* provider definition had invalid new line in first argument ([5ac0bae](https://github.com/geekcell/imagekit-bundle/commit/5ac0bae019e4d1d2d9720dd985a136d59070ac14))
+
 ## [1.0.3](https://github.com/geekcell/imagekit-bundle/compare/v1.0.2...v1.0.3) (2023-02-13)
 
 
