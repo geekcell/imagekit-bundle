@@ -48,8 +48,8 @@ final class GeekCellImagekitExtension extends Extension
 
         $providerDefiniton = (new Definition(Provider::class))
                 ->setFactory([Provider::class, 'create'])
-                ->setArguments(['
-                    %geek_cell_imagekit.public_key%',
+                ->setArguments([
+                    '%geek_cell_imagekit.public_key%',
                     '%geek_cell_imagekit.private_key%',
                     $providerEndpoint,
                 ])
